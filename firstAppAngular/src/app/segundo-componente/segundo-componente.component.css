@@ -1,0 +1,14 @@
+.li {
+    color: red;
+}
+
+.no {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.no :hover {
+    text-shadow: coral;
+    color: red;
+}
