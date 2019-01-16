@@ -4,3 +4,47 @@
 
 <app-segundo-componente></app-segundo-componente>
 
+<div class="container">
+        <div class="row">
+            <div class="col-8 mt-4">
+                <ul class="list-group">
+                    <li
+                    *ngFor="let dato of datosArray"
+                    class="list-group-item list-group-item-action"
+                    (click)="SeleccionEdit(dato)"
+                    [class.active]= "dato == seleccionarDato">
+                        <span class="badge badge-info">{{dato.id}}</span>
+                          {{ dato.name }}
+                         - {{ dato.edad }}
+                         - {{ dato.pais}}
+                    </li>
+                </ul>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Mantenedor de elementos
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="seleccionarDato.name" placeholder="Inseta nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="number" [(ngModel)]="seleccionarDato.edad" placeholder="Inseta nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" [(ngModel)]="seleccionarDato.pais" placeholder="Inseta nombre" class="form-control">
+                        </div>
+                        <button (click)="addOrEdit()" class="btn btn-success">Agregar o Editar</button><span class="pl-2"></span>
+                        <button *ngIf="seleccionarDato.id !== 0"
+                         class="btn btn-danger"
+                         (click)="eliminaDato()">
+                         Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="./../../assets/img/wsp.png" alt="" width="222px">
+            </div>
+        </div>    
+    </div>

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Datos } from '../modelo/datos';
 
 @Component({
     selector: 'hola-mundo',
